@@ -76,6 +76,19 @@ int main()
     vector<RecordBook> students; // вектор, который будет хранить объекты RecordBook
     int choice;
     RecordBook rb;
+     //Проверка оценка не должна быть меньше 1 и больше 5
+    try 
+    {
+        enterData(rb);
+        if (rb.grade < 1 || rb.grade > 5) 
+        {
+            throw std::invalid_argument("Invalid grade: " + std::to_string(rb.grade));
+        }
+        students.push_back(rb);
+    }
+    catch (const std::invalid_argument& e) {
+        std::cerr << e.what() << std::endl;
+    }
 
     // Бесконечный цикл для отображения меню и выполнения действий по выбору пользователя
     while (true)
