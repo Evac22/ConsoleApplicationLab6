@@ -7,7 +7,8 @@
 using namespace std;
 
 // Описание класса RecordBook
-class RecordBook {
+class RecordBook 
+{
 public:
     string name;
     string surname;
@@ -55,7 +56,8 @@ void displayData(const RecordBook& rb)
 // Функция сравнения студентов по фамилии и имени
 bool compareStudents(const RecordBook& a, const RecordBook& b)
 {
-    if (a.surname == b.surname) {
+    if (a.surname == b.surname) 
+    {
         return a.name < b.name;
     }
     return a.surname < b.surname;
